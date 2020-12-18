@@ -41,4 +41,17 @@ class User < ApplicationRecord
   #through and source go through associations 
 
 
+  #ActiveRecord finder methods 
+
+
+
+
+  #Write a query to look for all the users between the ages of 10-20
+
+
+  #Find all the users not younger than the age of 11
+  #HINT: where not
+
+
+  #Find all the instructors from a list and order by ascending
 end 

@@ -39,4 +39,64 @@ class Chirp < ApplicationRecord
     source: :liker #this is association in the Like model
 
   #ALL has_many :throughs must be below any associations that they use 
+
+  # Find all the chirps authored by the user, "will_climb_rocks"
+
+
+  # Find all of the chirps liked by users that are politically affiliated with Javascript
+
+  # Find the chirps that have no likes
+
+  # Find the number of likes each chirp has
+
+  # Find chirps with at least 3 likes
+
+  # Find all the chirps created by someone of age 11 that were also liked by someone of age 11
+
+
+
+   # Includes #
+
+    # def self.see_chirp_authors_n_plus_one
+    #     # the "+1"
+    #     chirps = Chirp.all
+
+    #     # the "N"
+    #     chirps.each do |chirp|
+    #         puts chirp.author.username
+    #     end
+
+    # end
+
+    # def self.see_chirps_optimized
+    #     # pre-fetches data
+    #     chirps = Chirp.includes(:author).all
+
+    #     chirps.each do |chirp| 
+    #     # uses pre-fetched data 
+    #         puts chirp.author.username
+    #     end
+    # end
+
+    # Joins #
+
+    # def self.see_chirp_num_likes_n_plus_one
+    #     chirps = Chirp.all
+
+    #     chirps.each do |chirp|
+    #         puts chirp.likes.length
+    #     end
+    # end
+
+    # def self.see_chirp_num_likes_optimized
+    #     chirps_with_likes = Chirp
+    #         .select("chirps.*, COUNT(*) AS num_likes")
+    #         .joins(:likes)
+    #         .group(:id)
+    
+    #     chirps_with_likes.each do |chirp|
+    #         puts chirp.num_likes
+    #     end
+    # end
+
 end 
