@@ -41,18 +41,24 @@ class Chirp < ApplicationRecord
   #ALL has_many :throughs must be below any associations that they use 
 
   # Find all the chirps authored by the user, "will_climb_rocks"
+  # Chirp.joins(:author).where(users: {username: "will_climb_rocks"})
+  # Chirp.joins(:author).where("users.username = 'will_climb_rocks' ")
+  # # joins calls an ASSOCIATION, in our where we have to specify what table we want to filter. 
+  # # users is the table and username is a column in users table
 
+  # # Find all of the chirps liked by users that are politically affiliated with Javascript
+  # Chirp.joins(:likers).where("users.political_affiliation = 'JavaScript' ")
 
-  # Find all of the chirps liked by users that are politically affiliated with Javascript
-
-  # Find the chirps that have no likes
-
-  # Find the number of likes each chirp has
-
-  # Find chirps with at least 3 likes
-
-  # Find all the chirps created by someone of age 11 that were also liked by someone of age 11
-
+  # # Find the chirps that have no likes
+  # Chirp.left_outer_joins(:likes).where(likes: {id: nil})
+  # # Find the number of likes each chirp has
+  # Chirp.select(:id,:body,"count(*) as num_likes").joins(:likes).group(:id)
+  # # Find chirps with at least 3 likes
+  # Chirp.select(:id,:body,"count(*) as num_likes").joins(:likes).group(:id).having("count(*) >= 3")
+  # Chirp.joins(:likes).group(:id).having("count(*) >= 3").pluck(:body)
+  # # Find all the chirps created by someone of age 11 that were also liked by someone of age 11
+  # Chirp.joins(:likers,:author).where(users: {age: 11}).where(authors_chirps: {age: 11})
+  # active record will alias the users table in the second joins 
 
 
    # Includes #

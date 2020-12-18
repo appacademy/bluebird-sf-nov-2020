@@ -20,7 +20,7 @@ big_company = User.create!(username: "instructors_rock", age: 52, political_affi
 
 
 #chirps
-chirp1 = Chirp.create!(author_id: charlos.id, body: "Buckets!!!")
+chirp1 = Chirp.create!(author_id: charlos.id, body: "Buckets!!!") #this one the best
 chirp2 = Chirp.create!(author_id: big_company.id, body: "Hello fellow instructors.")
 chirp3 = Chirp.create!(author_id: big_company.id, body: "Have you seen this sweet instructor merch?")
 chirp4 = Chirp.create!(author_id: zack.id, body: "Zooommm!!!!")
@@ -45,7 +45,7 @@ Like.create!(liker_id: zack.id, chirp_id: chirp8.id)
 Like.create!(liker_id: zack.id, chirp_id: chirp9.id)
 Like.create!(liker_id: zack.id, chirp_id: chirp10.id)
 
-# lina
+# lina2020
 Like.create!(liker_id: lina.id, chirp_id: chirp6.id)
 Like.create!(liker_id: lina.id, chirp_id: chirp7.id)
 Like.create!(liker_id: lina.id, chirp_id: chirp8.id)
