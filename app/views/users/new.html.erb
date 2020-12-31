@@ -1,0 +1,32 @@
+<h1>Form to create a user</h1>
+
+<!---<form action="/users" method="POST">--->
+<!---<form action="<%=users_url%>" method="POST">
+    <label>Username:
+        <input type="text" name="user[username]" value="<%= @user.username %>" />
+    </label>
+
+    <br>
+
+    <label>Age:
+        <input type="text" name="user[age]" value="<%= @user.age %>">
+    </label>
+
+    <br>
+
+    <label>Political affiliation:
+        <input type="text" name="user[political_affiliation]"value="<%= @user.political_affiliation %>" >
+    </label>
+
+    <br>
+
+    <label>Email:
+        <input type="text" name="user[email]" value="<%= @user.email %>">
+    </label>
+
+    <br>
+
+    <input type="submit" value="Create user">
+</form>--->
+
+<%= render "form", {user: @user, type: :new} %>

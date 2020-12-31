@@ -42,26 +42,26 @@ class User < ApplicationRecord
 
 
   #ActiveRecord finder methods allows you  to find one instance of things.  Returns first record that it  finds
-  User.first 
-  User.last
-  User.find(5) #User.find(<id>) takes in a id key as an argument and will raise error message if not found
-  User.find_by(username: "charlos_gets_buckets") #User.find_by(key(column): <value>) and returns nil if not found
+  # User.first 
+  # User.last
+  # User.find(5) #User.find(<id>) takes in a id key as an argument and will raise error message if not found
+  # User.find_by(username: "charlos_gets_buckets") #User.find_by(key(column): <value>) and returns nil if not found
 
-  # all data return will be a ruby object if it is found
+  # # all data return will be a ruby object if it is found
 
-  #Write a query to look for all the users between the ages of 10-20
-  User.where("age >= 10 AND age <= 20")
-  User.where("age >= (?) AND  age <= (?)",10,20)
-  User.where(age: 10..20)
-  User.where(age: 10...21)
+  # #Write a query to look for all the users between the ages of 10-20
+  # User.where("age >= 10 AND age <= 20")
+  # User.where("age >= (?) AND  age <= (?)",10,20)
+  # User.where(age: 10..20)
+  # User.where(age: 10...21)
 
-  #Find all the users not younger than the age of 11
-  #HINT: where not
-  User.where.not("age < 11")
+  # #Find all the users not younger than the age of 11
+  # #HINT: where not
+  # User.where.not("age < 11")
 
-  #Find all the instructors from a list and order by ascending
-  instructors = ["hawaiian_shirts_ftw","will_climb_rocks","give_me_wine"]
-  User.where(username: instructors)
-  User.where("username in (?)",instructors)
+  # #Find all the instructors from a list and order by ascending
+  # instructors = ["hawaiian_shirts_ftw","will_climb_rocks","give_me_wine"]
+  # User.where(username: instructors)
+  # User.where("username in (?)",instructors)
   
 end 

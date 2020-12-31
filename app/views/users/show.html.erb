@@ -1,0 +1,11 @@
+<!---<li><%= @user.username %></li>
+<li><%= @user.age %></li>
+<li><%= @user.email %></li>
+<li><%= @user.political_affiliation %></li>--->
+
+<%= render "user", {user: @user} %>
+
+<!---  <li><a href="/users">Return to all users</a></li> --->
+<!--- <li><a href="<%= users_url %>">Return to all users</a></li> --->
+<!--- non-returning tags => <%%> => er--->
+<!--- returning tags => <%=%> => pe--->

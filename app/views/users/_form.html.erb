@@ -1,0 +1,45 @@
+
+<!---1. action - POST = users_url / PATCH = user_url(user.id)
+2. method - POST =POST / PATCH = PATCH
+3. submit button - POST = Create user / patch = Update user--->
+<% if type == :new %>
+    <% action_url = users_url %>
+    <% button_text = "Create user" %>
+<% elsif type == :edit %>
+    <% action_url = user_url(user.id) %>
+    <% button_text = "Update user" %>
+<% end %>
+
+
+<form action="<%=action_url%>" method="POST">
+
+    <% if type == :edit %>
+        <input type="hidden" name="_method" value="PATCH">
+    <% end %>
+
+    <label>Username:
+        <input type="text" name="user[username]" value="<%= user.username %>" />
+    </label>
+
+    <br>
+
+    <label>Age:
+        <input type="text" name="user[age]" value="<%= user.age %>">
+    </label>
+
+    <br>
+
+    <label>Political affiliation:
+        <input type="text" name="user[political_affiliation]"value="<%= user.political_affiliation %>" >
+    </label>
+
+    <br>
+
+    <label>Email:
+        <input type="text" name="user[email]" value="<%= user.email %>">
+    </label>
+
+    <br>
+
+    <input type="submit" value="<%= button_text %>">
+</form>
