@@ -12,4 +12,7 @@ Rails.application.routes.draw do
   end
 
   resources :chirps, only: [:show]
+
+  resource :session, only: [:new, :create, :destroy]
+  #singular!!!!!!!
 end
