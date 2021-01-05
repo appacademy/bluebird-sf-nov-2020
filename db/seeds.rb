@@ -10,13 +10,13 @@ Chirp.destroy_all
 Like.destroy_all
 
 #Instructors 
-ryan = User.create!(username: "will_climb_rocks", age: 9, political_affiliation: "JavaScript", email: "boulderz@aa.io")
-charlos = User.create!(username: "charlos_gets_buckets", age: 2, political_affiliation: "JavaScript", email: "ballin@aa.io")
-lina = User.create!(username: "lina_2020", age: 11, political_affiliation: "Ruby", email: "good_speeches@aa.io")
-erik = User.create!(username: "hawaiian_shirts_ftw", age: 11, political_affiliation: "JavaScript", email:"valhalla@aa.io")
-zack = User.create!(username: "music_for_lyfe", age: 11, political_affiliation: "Python", email:"musicmaster@aa.io")
-julia = User.create!(username: "give_me_wine", age: 11, political_affiliation: "JavaScript", email:"might_cry@aa.io")
-big_company = User.create!(username: "instructors_rock", age: 52, political_affiliation: "Instructors", email: "giveus@money.now")
+ryan = User.create!(username: "will_climb_rocks", age: 9, political_affiliation: "JavaScript", email: "boulderz@aa.io", password: '123456')
+charlos = User.create!(username: "charlos_gets_buckets", age: 2, political_affiliation: "JavaScript", email: "ballin@aa.io", password: '123456')
+lina = User.create!(username: "lina_2020", age: 11, political_affiliation: "Ruby", email: "good_speeches@aa.io", password: '123456')
+erik = User.create!(username: "hawaiian_shirts_ftw", age: 11, political_affiliation: "JavaScript", email:"valhalla@aa.io", password: '123456')
+zack = User.create!(username: "music_for_lyfe", age: 11, political_affiliation: "Python", email:"musicmaster@aa.io", password: '123456')
+julia = User.create!(username: "give_me_wine", age: 11, political_affiliation: "JavaScript", email:"might_cry@aa.io", password: '123456')
+big_company = User.create!(username: "instructors_rock", age: 52, political_affiliation: "Instructors", email: "giveus@money.now", password: '123456')
 
 
 #chirps

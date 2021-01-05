@@ -36,7 +36,13 @@ class UsersController < ApplicationController
       # render json: user
     else
       #if unsuccessful, render :new 
+      #use AR for errors
+      # flash[:errors] = @user.errors.full_messages #only use flash with a redirect- persists for one extra cycle
+      flash.now[:errors] = @user.errors.full_messages
+      #flash.now-> for this cycle only 
+      #:errors is banana-able -> just make sure it matches in application.html.erb
       render :new
+
       # render json: user.errors.full_messages, status: 422
     end
   end
