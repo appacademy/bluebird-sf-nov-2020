@@ -32,7 +32,9 @@ class UsersController < ApplicationController
       #login user if save successful 
       # redirect_to "/users/#{user.id}"
       login(@user) #from applicationcontroller 
-      redirect_to user_url(@user)
+      redirect_to user_url(@user) # status code: 300 redirect
+      # redirect_to users_url # status code: 300 redirect, but to the wrong url
+      # render :show # status code: 200 OK
       # render json: user
     else
       #if unsuccessful, render :new 

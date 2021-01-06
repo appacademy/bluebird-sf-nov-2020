@@ -24,9 +24,10 @@
 
 class User < ApplicationRecord 
   #validations give us nice and readable errors messages e.g. fake_ryan.errors.full_messages 
-  validates :username, :email, :session_token, presence: true, uniqueness: true 
+  validates :email, :session_token, presence: true, uniqueness: true 
   validates :age, :political_affiliation, :password_digest, presence: true 
   validates :password, length: { minimum: 6 }, allow_nil: true 
+  validates :username, uniqueness: true, presence: true
   #not a column in the db 
   #length check for when we sign up a user
   #other times, allow pw to be nil 
